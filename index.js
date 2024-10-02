@@ -5,6 +5,9 @@ const spellingWord = document.getElementById('pronunciation');
 const buttonPlay = document.getElementById("play");
 let audio;
 
+const typeOfWord = document.getElementById("typeOfWord");
+const meaningWord = document.getElementById("meaning");
+
 function requesting()
 {
     const wordA = input.value.trim();  // Get value and delete blank spaces
@@ -43,15 +46,19 @@ function requesting()
         // Show all json data
         console.log(data);
 
-        // Extraer detalles de pronunciación (si están disponibles)
+        // Extraer detalles de pronunciación (if available)
         const pronunciation = data.results[0].lexicalEntries[0].entries[0].pronunciations[0];
+
+        //Extract type of word
+        const noun = data.results[0].lexicalEntries[0].lexicalCategory.text;
+        const meaning = data.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0];
+        
         
         // Show word and pronunciation
         wordDisplay.textContent = input.value;
         spellingWord.textContent = pronunciation.phoneticSpelling;
-        
-        // Log de la URL del archivo de audio
-        console.log(`Audio File URL: ${pronunciation.audioFile}`);
+        typeOfWord.textContent = noun;
+        meaningWord.textContent = '• ' + meaning;
         
         // Play to listen to pronunciation
          audio = new Audio(pronunciation.audioFile);
@@ -72,7 +79,8 @@ input.addEventListener('keydown', function(event)
     }
 });
 
-buttonPlay.addEventListener("click", function(event)
+//When pressing play button it will play pronunciation
+buttonPlay.addEventListener("click", function()
 {
     // Play to listen to pronunciation
     audio.play();  // Play pronunciation
