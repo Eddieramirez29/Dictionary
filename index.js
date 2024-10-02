@@ -2,64 +2,80 @@ const input = document.getElementById('searchBar');
 const wordDisplay = document.getElementById('word');
 const spellingWord = document.getElementById('pronunciation');
 
-function requesting() {
-    const wordA = input.value.trim();  // Obtener el valor del input y eliminar espacios en blanco
+const buttonPlay = document.getElementById("play");
+let audio;
 
-    // Verificar que el input no esté vacío
-    if (!wordA) {
-        alert('Por favor, introduce una palabra.');
+function requesting()
+{
+    const wordA = input.value.trim();  // Get value and delete blank spaces
+    alert(wordA);
+
+    // Verify if input is empty
+    if (!wordA)
+    {
+        alert('Please, only words with A.');
         return;
     }
 
-    // Define la URL de la API
+    // API URL request
     const url = `https://od-api-sandbox.oxforddictionaries.com/api/v2/entries/en-gb/${wordA}`;
 
-    // Define tus headers
-    const headers = {
+    // Define headers
+    const headers =
+    {
         'Accept': 'application/json',
         'app_id': '3e3bb53b',  // Tu app_id
         'app_key': '9be6420317b9a71a16a1e28346a7977f'  // Tu app_key
     };
 
-    // Hacer la solicitud a la API usando fetch
+    // Request to API
     fetch(url, {
         method: 'GET',
         headers: headers
     })
     .then(response => {
-        if (!response.ok) {  // Manejo de errores HTTP
-            throw new Error('Error en la solicitud: ' + response.statusText);
+        if (!response.ok) {  // Handle http errors
+            throw new Error('Request error: ' + response.statusText);
         }
-        return response.json();  // Parsear la respuesta JSON
+        return response.json();  // Parser response json(It converts response to JSON format)
     })
     .then(data => {
-        // Log de toda la data
+        // Show all json data
         console.log(data);
 
         // Extraer detalles de pronunciación (si están disponibles)
         const pronunciation = data.results[0].lexicalEntries[0].entries[0].pronunciations[0];
         
-        // Mostrar la palabra y la pronunciación
+        // Show word and pronunciation
         wordDisplay.textContent = input.value;
         spellingWord.textContent = pronunciation.phoneticSpelling;
         
         // Log de la URL del archivo de audio
         console.log(`Audio File URL: ${pronunciation.audioFile}`);
         
-        // Reproducir el audio de la pronunciación (opcional)
-        const audio = new Audio(pronunciation.audioFile);
-        // audio.play();  // Descomenta esta línea si quieres reproducir automáticamente
+        // Play to listen to pronunciation
+         audio = new Audio(pronunciation.audioFile);
+        
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('No se pudo encontrar la palabra.'); // Mensaje de error para el usuario
+        alert('Word no found'); // Mensaje de error para el usuario
     });
 }
 
-// Agregar el evento al input para detectar la tecla "Enter"
-input.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        requesting();  // Llama a la función requesting
+// When pressing event it calls requesting function to perform API request
+input.addEventListener('keydown', function(event)
+{
+    if (event.key === 'Enter')
+    {
+        requesting();  // Call to requesting function
     }
 });
+
+buttonPlay.addEventListener("click", function(event)
+{
+    // Play to listen to pronunciation
+    audio.play();  // Play pronunciation
+});
+
 
