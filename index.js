@@ -7,6 +7,7 @@ let audio;
 
 const typeOfWord = document.getElementById("typeOfWord");
 const meaningWord = document.getElementById("meaning");
+const synonymsWord = document.getElementById("synonyms");
 
 function requesting()
 {
@@ -52,16 +53,19 @@ function requesting()
         //Extract type of word
         const noun = data.results[0].lexicalEntries[0].lexicalCategory.text;
         const meaning = data.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0];
-        
+        // Navigate to the synonyms
+        const synonyms = data.results[0].lexicalEntries[0].entries[0].senses[0].synonyms[0].text;
+        alert(synonyms);
         
         // Show word and pronunciation
         wordDisplay.textContent = input.value;
         spellingWord.textContent = pronunciation.phoneticSpelling;
         typeOfWord.textContent = noun;
         meaningWord.textContent = '• ' + meaning;
+        synonymsWord.textContent = synonyms;
         
         // Play to listen to pronunciation
-         audio = new Audio(pronunciation.audioFile);
+        audio = new Audio(pronunciation.audioFile);
         
     })
     .catch(error => {
