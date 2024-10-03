@@ -8,6 +8,7 @@ let audio;
 const typeOfWord = document.getElementById("typeOfWord");
 const meaningWord = document.getElementById("meaning");
 const synonymsWord = document.getElementById("synonyms");
+const link = document.getElementById("sourceLink");
 
 function requesting()
 {
@@ -63,6 +64,8 @@ function requesting()
         typeOfWord.textContent = noun;
         meaningWord.textContent = '• ' + meaning;
         synonymsWord.textContent = synonyms;
+        link.href = url;
+        link.textContent = url;
         
         // Play to listen to pronunciation
         audio = new Audio(pronunciation.audioFile);

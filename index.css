@@ -253,6 +253,34 @@ input:checked + .slider:before
     font-weight: bolder;
 }
 
+/*Last section*/
+.containerSource
+{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    width: 430px;
+    height: 100px;
+    border: 2px solid black;
+}
+
+#source
+{
+    margin-left: 20px;
+    margin-bottom: 5px;
+    color: rgb(172, 169, 169);
+}
+
+#sourceLink
+{
+    margin-left: 20px;
+    margin-bottom: 5px;
+    font-size:xx-small;
+    width: 400px;
+
+}
+
+
 
 /* Media query for mobile devices */
 @media (max-width: 430px)
