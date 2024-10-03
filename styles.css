@@ -1,0 +1,318 @@
+@charset "UTF-8";
+.headerContainer {
+  display: flex;
+  justify-content: left;
+  width: 430px;
+  height: 50px;
+  /* border: 2px solid black; */
+}
+
+.headerContainerArrow {
+  display: flex;
+  justify-content: right;
+  width: 300px;
+  height: 50px;
+  font-weight: bolder;
+  border-right: 2px solid black;
+}
+
+#arrow {
+  height: 50px;
+  width: 15px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Estilos del contenedor del switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+/* Oculta el checkbox real */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Estilos del deslizador */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Cambia el color de fondo cuando está activado (checked) */
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+/* Desliza el círculo hacia la derecha cuando está activado */
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+.headerContaner_button {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/*Code for search bar*/
+#searchBar {
+  height: 40px;
+  width: 380px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: none;
+  background-color: rgb(243, 243, 243);
+  outline: none;
+}
+
+#iconSearch {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background-color: rgb(243, 243, 243);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 10px;
+}
+
+/*Container Spelling*/
+.containerSpelling {
+  width: 430px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerSpelling-words {
+  width: 215px;
+  height: 100px;
+}
+
+#word {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+#word, #pronunciation {
+  width: 215px;
+  height: 50px;
+  padding-left: 5px;
+}
+
+.containerSpelling-buttonPlay {
+  width: 215px;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#play {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+#play:active {
+  transform: scale(0.9);
+}
+
+#playImage {
+  height: 45px;
+  width: 45px;
+}
+
+/*Section for pronunciantion*/
+.typeOfWordContainer {
+  width: 430px;
+  height: 100px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#typeOfWord {
+  width: 150px;
+  height: 30px;
+}
+
+/*Section for meaning*/
+.meaningContainer {
+  width: 390px;
+  height: 250px;
+  border: 2px solid black;
+  padding: 20px;
+}
+
+.meaningContainer-title {
+  width: 390px;
+  height: 50px;
+  border: 2px solid black;
+}
+
+#meaningWord {
+  color: rgb(172, 169, 169);
+}
+
+#meaning {
+  width: 390px;
+  height: 194px;
+  border: 2px solid black;
+}
+
+/*Section for meaning*/
+.synonymsContainer {
+  width: 390px;
+  height: 30px;
+  border: 2px solid black;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.synonymsContainer-title {
+  width: 90px;
+  height: 30px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#synonymsWord {
+  color: rgb(172, 169, 169);
+}
+
+#synonyms {
+  width: 240px;
+  height: 30px;
+  border: 2px solid black;
+  padding-left: 10px;
+  color: rgb(108, 5, 233);
+  font-weight: bolder;
+}
+
+/*Last section*/
+.containerSource {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  width: 430px;
+  height: 100px;
+  border: 2px solid black;
+}
+
+#source {
+  margin-left: 20px;
+  margin-bottom: 5px;
+  color: rgb(172, 169, 169);
+}
+
+#sourceLink {
+  margin-left: 20px;
+  margin-bottom: 5px;
+  font-size: xx-small;
+  width: 400px;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 430px) {
+  .headerContainer {
+    width: 430px; /* Cambia a 100% del ancho del contenedor */
+  }
+  .headerContainerArrow {
+    width: 300px;
+    height: 50px;
+  }
+  #arrow {
+    width: 15px;
+  }
+  .switch {
+    width: 34px;
+  }
+  .slider:before {
+    width: 14px;
+  }
+  .headerContaner_button {
+    width: 100px;
+  }
+  /*Code for search bar*/
+  #searchBar {
+    width: 380px;
+  }
+  #iconSearch {
+    width: 30px;
+    height: 20px;
+    padding: 10px;
+  }
+  .containerSpelling {
+    width: 430px;
+    height: 100px;
+  }
+  /*Section for pronunciantion*/
+  .typeOfWordContainer {
+    width: 430px;
+    height: 100px;
+  }
+  /*Section for meaning*/
+  .meaningContainer {
+    width: 390px;
+    height: 250px;
+    padding: 20px;
+  }
+  .meaningContainer-title {
+    width: 390px;
+    height: 50px;
+  }
+  #meaning {
+    width: 390px;
+    height: 194px;
+  }
+  /*Section for meaning*/
+  .synonymsContainer {
+    width: 390px;
+    height: 30px;
+  }
+  .synonymsContainer-title {
+    width: 90px;
+    height: 30px;
+  }
+  #synonyms {
+    width: 240px;
+    height: 30px;
+  }
+}/*# sourceMappingURL=styles.css.map */

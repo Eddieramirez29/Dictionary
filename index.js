@@ -93,4 +93,54 @@ buttonPlay.addEventListener("click", function()
     audio.play();  // Play pronunciation
 });
 
+// Change the background for the selectors by class
+function changeBackground(color)
+{
+    const containers = 
+    [
+        '.headerContainer',
+        '.headerContainerArrow',
+        '.switch',
+        '.headerContaner_button',
+        '.containerSpelling',
+        '.containerSpelling-buttonPlay',
+        '.typeOfWordContainer',
+        '.meaningContainer',
+        '.synonymsContainer',
+        '.containerSource'
+    ];
+
+    // Iterate through each class and apply the new background
+    containers.forEach(selector =>
+    {
+        let elements = document.querySelectorAll(selector);
+        elements.forEach(element =>
+        {
+            element.style.background = color;
+        });
+    });
+}
+
+// Select the checkbox
+const checkbox = document.querySelector('.switch input');
+
+// Add an event listener for the checkbox state change
+checkbox.addEventListener('change', function() 
+{
+    if (checkbox.checked) 
+    {
+        // Call the function to change the background to a specific color
+        changeBackground('black');
+    } 
+    else 
+    {
+        // Call the function to change the background to a specific color
+        changeBackground('white');
+    }
+});
+
+
+
+
+
 

@@ -1,10 +1,10 @@
-
+$width-container: 430px;
 
 .headerContainer
 {
     display: flex;
     justify-content: left;
-    width: 430px;
+    width: $width-container;
     height: 50px;
     /* border: 2px solid black; */
 }
@@ -13,6 +13,7 @@
 {
     display: flex;
     justify-content: right;
+    width: 300px;
     height: 50px;
     font-weight: bolder;
     border-right: 2px solid black;
@@ -115,7 +116,7 @@ input:checked + .slider:before
 /*Container Spelling*/
 .containerSpelling
 {
-    width: 430px;
+    width: $width-container;
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -174,7 +175,7 @@ input:checked + .slider:before
 /*Section for pronunciantion*/
 .typeOfWordContainer
 {
-    width: 430px;
+    width: $width-container;
     height: 100px;
     border: 2px solid black;
     display: flex;
@@ -259,7 +260,7 @@ input:checked + .slider:before
     display: flex;
     flex-direction: column;
     align-content: space-around;
-    width: 430px;
+    width: $width-container;
     height: 100px;
     border: 2px solid black;
 }
@@ -285,19 +286,17 @@ input:checked + .slider:before
 /* Media query for mobile devices */
 @media (max-width: 430px)
 {
-    body
-{
-    width: 450px;
-}
+
 
     .headerContainer
     {
-        width: 430px; /* Cambia a 100% del ancho del contenedor */
+        width: $width-container; /* Cambia a 100% del ancho del contenedor */
     }
     
     .headerContainerArrow
     {
         width: 300px;
+        height: 50px;
     }
     
     #arrow
@@ -336,13 +335,13 @@ input:checked + .slider:before
 
     .containerSpelling
     {
-        width: 430px;
+        width: $width-container;
         height: 100px;
     }
     /*Section for pronunciantion*/
     .typeOfWordContainer
     {
-        width: 430px;
+        width: $width-container;
         height: 100px;
     }
     /*Section for meaning*/
