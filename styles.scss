@@ -1,10 +1,16 @@
 $width-containerMobile: 430px;
 $width-containerWeb: 516px;
 
+body
+{
+    background-color: antiquewhite;
+}
+
 .headerContainer
 {
     display: flex;
     justify-content: left;
+    background-color: white;
 }
 
 .headerContainerArrow
@@ -12,6 +18,7 @@ $width-containerWeb: 516px;
     display: flex;
     justify-content: right;
     font-weight: bolder;
+    background-color: white;
 }
 
 #arrow
@@ -26,6 +33,7 @@ $width-containerWeb: 516px;
 {
     position: relative;
     display: inline-block;
+    background-color: white;
 }
   
   /* Oculta el checkbox real */
@@ -74,6 +82,7 @@ input:checked + .slider:before
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    background-color: white;
 }
 
 /*Code for search bar*/
@@ -105,6 +114,7 @@ input:checked + .slider:before
     height: 100px;
     display: flex;
     justify-content: space-between;
+    background-color: white;
 }
 
 .containerSpelling-words
@@ -138,6 +148,7 @@ input:checked + .slider:before
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    background-color: white;
 }
 
 #play
@@ -170,6 +181,7 @@ input:checked + .slider:before
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: white;
 }
 
 #typeOfWord
@@ -184,6 +196,7 @@ input:checked + .slider:before
     width: 390px;
     height: 250px;
     padding: 20px;
+    background-color: white;
 }
 
 .meaningContainer-title
@@ -210,6 +223,7 @@ input:checked + .slider:before
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    background-color: white;
 }
 
 .synonymsContainer-title
@@ -241,6 +255,7 @@ input:checked + .slider:before
     display: flex;
     flex-direction: column;
     align-content: space-around;
+    background-color: white;
 }
 
 #source

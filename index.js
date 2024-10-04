@@ -75,7 +75,7 @@ function requesting()
     })
     .catch(error => {
         console.error('Error:', error);
-        alert('Word no found'); // Mensaje de error para el usuario
+        alert('Word no found. Only words that begin with A'); // Mensaje de error para el usuario
     });
 }
 
