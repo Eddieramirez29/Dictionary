@@ -1,7 +1,9 @@
+const serif = document.getElementById('serif');
 const input = document.getElementById('searchBar');
 const wordDisplay = document.getElementById('word');
 const spellingWord = document.getElementById('pronunciation');
 
+const slider = document.querySelector('.slider');
 const buttonPlay = document.getElementById("play");
 let audio;
 
@@ -121,6 +123,32 @@ function changeBackground(color)
     });
 }
 
+//////////////////////////////////////////////////////////////
+// Change the color for the selectors by class
+function changeColor(color)
+{
+    const containersWords =
+    [
+        '#serif',
+        '#word',
+        '#typeOfWord',
+        '#meaning',
+        '#sourceLink'
+    ];
+
+    // Iterate through each class and apply the new background
+    containersWords.forEach(selector =>
+    {
+        let elements = document.querySelectorAll(selector);
+        elements.forEach(element =>
+        {
+            element.style.color = color;
+        });
+    });
+
+    spellingWord.style.color = "rgb(108, 5, 233)";
+}
+
 // Select the checkbox
 const checkbox = document.querySelector('.switch input');
 
@@ -131,11 +159,15 @@ checkbox.addEventListener('change', function()
     {
         // Call the function to change the background to a specific color
         changeBackground('black');
+        changeColor("white");
+        slider.style.backgroundColor = 'rgb(108, 5, 233)';
     } 
-    else 
+    else
     {
         // Call the function to change the background to a specific color
         changeBackground('white');
+        changeColor("black");
+        slider.style.backgroundColor = '#ccc';
     }
 });
 

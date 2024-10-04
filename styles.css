@@ -2,23 +2,15 @@
 .headerContainer {
   display: flex;
   justify-content: left;
-  width: 430px;
-  height: 50px;
-  /* border: 2px solid black; */
 }
 
 .headerContainerArrow {
   display: flex;
   justify-content: right;
-  width: 300px;
-  height: 50px;
   font-weight: bolder;
-  border-right: 2px solid black;
 }
 
 #arrow {
-  height: 50px;
-  width: 15px;
   padding-bottom: 30px;
   padding-left: 10px;
   padding-right: 10px;
@@ -28,8 +20,6 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 34px;
-  height: 20px;
 }
 
 /* Oculta el checkbox real */
@@ -55,18 +45,11 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 14px;
-  width: 14px;
   left: 3px;
   bottom: 3px;
   background-color: white;
   transition: 0.4s;
   border-radius: 50%;
-}
-
-/* Cambia el color de fondo cuando está activado (checked) */
-input:checked + .slider {
-  background-color: #2196F3;
 }
 
 /* Desliza el círculo hacia la derecha cuando está activado */
@@ -75,8 +58,6 @@ input:checked + .slider:before {
 }
 
 .headerContaner_button {
-  width: 100px;
-  height: 50px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -84,8 +65,6 @@ input:checked + .slider:before {
 
 /*Code for search bar*/
 #searchBar {
-  height: 40px;
-  width: 380px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border: none;
@@ -105,7 +84,6 @@ input:checked + .slider:before {
 
 /*Container Spelling*/
 .containerSpelling {
-  width: 430px;
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -119,6 +97,10 @@ input:checked + .slider:before {
 #word {
   font-size: 40px;
   font-weight: bolder;
+}
+
+#pronunciation {
+  color: rgb(108, 5, 233);
 }
 
 #word, #pronunciation {
@@ -156,9 +138,7 @@ input:checked + .slider:before {
 
 /*Section for pronunciantion*/
 .typeOfWordContainer {
-  width: 430px;
   height: 100px;
-  border: 2px solid black;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -173,14 +153,12 @@ input:checked + .slider:before {
 .meaningContainer {
   width: 390px;
   height: 250px;
-  border: 2px solid black;
   padding: 20px;
 }
 
 .meaningContainer-title {
   width: 390px;
   height: 50px;
-  border: 2px solid black;
 }
 
 #meaningWord {
@@ -190,14 +168,10 @@ input:checked + .slider:before {
 #meaning {
   width: 390px;
   height: 194px;
-  border: 2px solid black;
 }
 
 /*Section for meaning*/
 .synonymsContainer {
-  width: 390px;
-  height: 30px;
-  border: 2px solid black;
   padding: 20px;
   display: flex;
   justify-content: flex-start;
@@ -207,7 +181,6 @@ input:checked + .slider:before {
 .synonymsContainer-title {
   width: 90px;
   height: 30px;
-  border: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -220,7 +193,6 @@ input:checked + .slider:before {
 #synonyms {
   width: 240px;
   height: 30px;
-  border: 2px solid black;
   padding-left: 10px;
   color: rgb(108, 5, 233);
   font-weight: bolder;
@@ -231,9 +203,6 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   align-content: space-around;
-  width: 430px;
-  height: 100px;
-  border: 2px solid black;
 }
 
 #source {
@@ -251,33 +220,13 @@ input:checked + .slider:before {
 
 /* Media query for mobile devices */
 @media (max-width: 430px) {
+  .containerSource {
+    height: 100px;
+    width: 430px;
+  }
   .headerContainer {
     width: 430px; /* Cambia a 100% del ancho del contenedor */
-  }
-  .headerContainerArrow {
-    width: 300px;
     height: 50px;
-  }
-  #arrow {
-    width: 15px;
-  }
-  .switch {
-    width: 34px;
-  }
-  .slider:before {
-    width: 14px;
-  }
-  .headerContaner_button {
-    width: 100px;
-  }
-  /*Code for search bar*/
-  #searchBar {
-    width: 380px;
-  }
-  #iconSearch {
-    width: 30px;
-    height: 20px;
-    padding: 10px;
   }
   .containerSpelling {
     width: 430px;
@@ -287,6 +236,36 @@ input:checked + .slider:before {
   .typeOfWordContainer {
     width: 430px;
     height: 100px;
+  }
+  .headerContainerArrow {
+    width: 300px;
+    height: 50px;
+  }
+  #arrow {
+    height: 50px;
+    width: 15px;
+  }
+  .switch {
+    width: 34px;
+    height: 20px;
+  }
+  .slider:before {
+    height: 14px;
+    width: 14px;
+  }
+  .headerContaner_button {
+    width: 100px;
+    height: 50px;
+  }
+  /*Code for search bar*/
+  #searchBar {
+    height: 40px;
+    width: 380px;
+  }
+  #iconSearch {
+    width: 30px;
+    height: 20px;
+    padding: 10px;
   }
   /*Section for meaning*/
   .meaningContainer {
@@ -314,5 +293,81 @@ input:checked + .slider:before {
   #synonyms {
     width: 240px;
     height: 30px;
+  }
+}
+/* Web */
+@media (min-width: 431px) {
+  .containerSource {
+    height: 120px;
+    width: 516px;
+  }
+  .headerContainer {
+    width: 516px; /* Cambia a 100% del ancho del contenedor */
+  }
+  .containerSpelling {
+    width: 516px;
+    height: 100px;
+  }
+  /*Section for pronunciation*/
+  .typeOfWordContainer {
+    width: 516px;
+    height: 100px;
+  }
+  .headerContainerArrow {
+    width: 360px; /* 300px + 20% */
+    height: 60px; /* 50px + 20% */
+  }
+  #arrow {
+    height: 60px; /* 50px + 20% */
+    width: 18px; /* 15px + 20% */
+  }
+  .switch {
+    width: 40.8px; /* 34px + 20% */
+    height: 24px; /* 20px + 20% */
+  }
+  .slider:before {
+    height: 16.8px; /* 14px + 20% */
+    width: 16.8px; /* 14px + 20% */
+  }
+  .headerContaner_button {
+    width: 120px; /* 100px + 20% */
+    height: 60px; /* 50px + 20% */
+  }
+  /*Code for search bar*/
+  #searchBar {
+    height: 48px; /* 40px + 20% */
+    width: 456px; /* 380px + 20% */
+  }
+  #iconSearch {
+    width: 36px; /* 30px + 20% */
+    height: 24px; /* 20px + 20% */
+    padding: 12px; /* 10px + 20% */
+  }
+  /*Section for meaning*/
+  .meaningContainer {
+    width: 468px; /* 390px + 20% */
+    height: 300px; /* 250px + 20% */
+    padding: 24px; /* 20px + 20% */
+  }
+  .meaningContainer-title {
+    width: 468px; /* 390px + 20% */
+    height: 60px; /* 50px + 20% */
+  }
+  #meaning {
+    width: 468px; /* 390px + 20% */
+    height: 232px; /* 194px + 20% */
+  }
+  /*Section for meaning*/
+  .synonymsContainer {
+    width: 476px; /* 390px + 20% */
+    height: 36px; /* 30px + 20% */
+  }
+  .synonymsContainer-title {
+    width: 108px; /* 90px + 20% */
+    height: 36px; /* 30px + 20% */
+  }
+  #synonyms {
+    width: 288px; /* 240px + 20% */
+    height: 36px; /* 30px + 20% */
   }
 }/*# sourceMappingURL=styles.css.map */
